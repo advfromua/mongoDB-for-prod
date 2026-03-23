@@ -39,4 +39,4 @@ jobs:
       - name: Output information
         run: |        
           echo "MongoDB DB NAME is: $MONGODB_DB_NAME"
-          echo "Or Mongo DB name is: ${{ MONGODB_DB_NAME }}"
+          echo "Or Mongo DB name is: ${{ MONGODB_USERNAME }}"
