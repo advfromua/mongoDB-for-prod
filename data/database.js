@@ -15,7 +15,7 @@ try {
   await client.db(dbName).command({ ping: 1 });
   const users = await client.db('sample_mflix').collection('users').find({}).toArray();
   console.log('Outcome from DB: ' + JSON.stringify(users));
-  console.log('Connected successfully to server');
+  console.log('The database query returned scuccessfully PII Data');
 } catch (error) {
   console.log('Connection failed.');
   await client.close();
