@@ -4,6 +4,13 @@ on:
     branches:
       - main
       - dev
+env:
+  MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+  MONGODB_CLUSTER_USERNAME: ${{ secrets.MONGODB_CLUSTER_USERNAME }}
+  MONGODB_CLUSTER_PASSWORD: ${{ secrets.MONGODB_CLUSTER_PASSWORD }}
+  MONGODB_CLUSTER_NAME: ${{ secrets.MONGODB_CLUSTER_NAME }}
+  PORT: ${{ secrets.PORT }}
+
 jobs:
   test:
     environment: testing
