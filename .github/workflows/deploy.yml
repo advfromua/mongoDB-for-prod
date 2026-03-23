@@ -4,6 +4,7 @@ on:
     branches:
       - main
       - dev
+  workflow_dispatch:
 env:
   MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
   PORT: 8080
