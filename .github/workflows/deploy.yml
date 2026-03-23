@@ -11,9 +11,9 @@ env:
 jobs:
   test:
     env: 
-      MONGODB_CLUSTER_ADDRESS: "cluster0.62f7gwd.mongodb.net"
-      MONGODB_USERNAME: "advfromua_db_user"
-      MONGODB_PASSWORD: "zZzv4No9CU7SyMdL"
+      MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS }}
+      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
     environment: testing
     runs-on: ubuntu-latest
     steps:
@@ -31,7 +31,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: "echo MongoDB Username: ${{ env.MONGODB_USERNAME }}"
+        run: "echo MongoDB Username: ${{ secrets.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -39,4 +39,4 @@ jobs:
       - name: Output information
         run: |        
           echo "MongoDB DB NAME is: $MONGODB_DB_NAME"
-          echo "Or Mongo DB name is: ${{ env.MONGODB_USERNAME }}"
+          echo "Or Mongo DB name is: ${{ secrets.MONGODB_USERNAME }}"
