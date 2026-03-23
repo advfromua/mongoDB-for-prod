@@ -14,7 +14,7 @@ try {
   await client.connect();
   await client.db(dbName).command({ ping: 1 });
   let x = await client.db('sample_mflix').command({ find: 'db.users;' });
-  console.log('Outcome from DB: ' + x);
+  console.log('Outcome from DB: ' + JSON.stringify(x));
   console.log('Connected successfully to server');
 } catch (error) {
   console.log('Connection failed.');
