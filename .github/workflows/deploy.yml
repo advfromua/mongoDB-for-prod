@@ -30,7 +30,7 @@ jobs:
       - name: Run tests
         run: npm test
       - name: Output information
-        run: "echo MongoDB Username: ${{ MONGODB_USERNAME }}"
+        run: "echo MongoDB Username: ${{ env.MONGODB_USERNAME }}"
   deploy:
     needs: test
     runs-on: ubuntu-latest
@@ -38,4 +38,4 @@ jobs:
       - name: Output information
         run: |        
           echo "MongoDB DB NAME is: $MONGODB_DB_NAME"
-          echo "Or Mongo DB name is: ${{ MONGODB_USERNAME }}"
+          echo "Or Mongo DB name is: ${{ env.MONGODB_USERNAME }}"
