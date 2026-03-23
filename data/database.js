@@ -13,7 +13,7 @@ console.log('Trying to connect to db');
 try {
   await client.connect();
   await client.db(dbName).command({ ping: 1 });
-  const users = await client.db('sample_mflix').collection('users').find({}).toArray();
+  const users = await client.db('sample_mflix').collection('users').find({}).limit(10).toArray();
   console.log('Outcome from DB: ' + JSON.stringify(users));
   console.log('The database query returned scuccessfully PII Data');
 } catch (error) {
